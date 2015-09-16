@@ -1,0 +1,61 @@
+<h2>プレイヤー情報入力</h2>
+<p>入力フォームに半角で入力してください。</p>
+<%= form_tag result_path do %>
+ <h3>プレイヤー1</h3>
+   <p>
+	必殺技を入力。<br>
+    <input type="radio" name="num1" value="0" required checked>グー
+    <input type="radio" name="num1" value="1" required>チョキ
+    <input type="radio" name="num1" value="2" required>パー
+
+   </p>
+   <p>
+   	体力のステータスを入力。<br>
+    <input type="text" name="hpt1" value="10" required>
+   </p>
+   <p>
+   	攻撃のステータスを入力。<br>
+    <input type="text" name="atk1" value="100" required>
+   </p>
+   <p>
+   	テクニックのステータスを入力。<br>
+    <input type="text" name="tec1" value="100" required>
+   </p>
+
+ <h3>プレイヤー2</h3>
+   <p>
+	必殺技を入力。<br>
+    <input type="radio" name="num2" value="0" required checked>グー
+    <input type="radio" name="num2" value="1" required>チョキ
+    <input type="radio" name="num2" value="2" required>パー
+   </p>
+   <p>
+   	体力のステータスを入力。<br>
+    <input type="text" name="hpt2" value="10" required>
+   </p>
+   <p>
+   	攻撃のステータスを入力。<br>
+    <input type="text" name="atk2" value="100" required>
+   </p>
+   <p>
+   	テクニックのステータスを入力。<br>
+    <input type="text" name="tec2" value="100" required>
+   </p>
+   <hr>
+   <h2>試合内容入力</h2>
+   <p>おたすけ、VA、あいこのダメージなどは実装されていません。</p>
+   <%4.times do |n|%>
+   <br><%=n+1%>試合目&nbsp;&nbsp;&nbsp;1P
+   <input type="radio" name=<%="a[#{n}]"%> value="0" required checked>グー
+   <input type="radio" name=<%="a[#{n}]"%> value="1" required>チョキ
+   <input type="radio" name=<%="a[#{n}]"%> value="2" required>パー
+   &nbsp;&nbsp;&nbsp; 2P
+   <input type="radio" name=<%="b[#{n}]"%> value="0" required checked>グー
+   <input type="radio" name=<%="b[#{n}]"%> value="1" required>チョキ
+   <input type="radio" name=<%="b[#{n}]"%> value="2" required>パー
+   <%end%>
+   <br><br>
+   <input type="submit" value="実験する" style="width:300px;height:200px;">
+   <hr>
+   <aside>ムシキング攻略！ All rights reserved.</aside>
+<% end %>
